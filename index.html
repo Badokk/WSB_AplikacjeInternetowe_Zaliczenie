@@ -1,11 +1,11 @@
 <html>
 
 <head>
-	</script src="scripts.js">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
+	<script type="text/javascript" src="scripts.js"></script>
 	<h1 id="Title">
 		System rejestracji studentów
 	</h1>
@@ -42,26 +42,24 @@
 	</div>
 
 	<div  id="Form">
-		<form>
-			Rejestracja<br>
-			Imię <input id="F_Name" type="text"><br>
-			Nazwisko <input id="F_Surname" type="text"><br>
-			<select id="F_Studies">
-				<option value="1">1:</option>
-				<option value="2">2:</option>
-				<option value="3">3:</option>
-				<option value="4">4:</option>
-			</select><br>
-			<button id="F_Submit">Zapisz</button>
-		</form>
+		Rejestracja<br>
+		Imię <input id="F_Name" type="text"><br>
+		Nazwisko <input id="F_Surname" type="text"><br>
+		<select id="F_Studies">
+			<option value="1">1:</option>
+			<option value="2">2:</option>
+			<option value="3">3:</option>
+			<option value="4">4:</option>
+		</select><br>
+		<button id="F_Submit" onClick="tryToAddEntry()">Zapisz</button>
 	</div>
 
 	<div id="Feedback"></div>
 
 	<div id="DbView">
 		Wyświetlanie bazy studentów<br>
-		<button id="Db_Show">Pokaż bazę danych</button>
-		<button id="Db_Hide">Ukryj bazę danych</button>
+		<button id="Db_Show" onClick="showDatabase()">Pokaż bazę danych</button>
+		<button id="Db_Hide" onClick="hideDatabase()">Ukryj bazę danych</button>
 
 		<table>
 			<th>
@@ -76,9 +74,9 @@
 
 	<div id="Report">
 		Raporty<br>
-		<button id="R_GroupByDate">Zarejestrowani/Dzień</button>
-		<button id="R_GroupByStudies">Zarejestrowani/Kierunek</button>
-		<button id="R_Hide">Ukryj</button>
+		<button id="R_GroupByDate" onClick="reportStudentsPerDay()">Zarejestrowani/Dzień</button>
+		<button id="R_GroupByStudies" onClick="reportStudentsPerStudies()">Zarejestrowani/Kierunek</button>
+		<button id="R_Hide" onClick="hideReports()">Ukryj</button>
 	</div>
 
 	<div id="Footer">
