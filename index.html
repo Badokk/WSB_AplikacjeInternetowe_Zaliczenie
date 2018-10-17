@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body>
+<body onload="document.getElementById('CurrentDate').innerHTML = 'Data: ' + initDate();">
 	<script type="text/javascript" src="scripts.js"></script>
 	<h1 id="Title">
 		System rejestracji studentów
@@ -41,7 +41,7 @@
 		</ul>
 	</div>
 
-	<form  id="Form">
+	<form id="Form">
 		Rejestracja<br>
 		Imię <input id="F_Name" type="text"><br>
 		Nazwisko <input id="F_Surname" type="text"><br>
@@ -69,6 +69,9 @@
 				<td>Kierunek</td>
 				<td>Data dodania</td>
 			</th>
+			<tr>
+				
+			</tr>
 		</table>
 	</div>
 
@@ -81,7 +84,6 @@
 
 	<div id="Footer">
 		<p id="CurrentDate">
-			Data: dziś
 		</p>
 		<p id="Disclaimer">
 			WSB 2018, Piotr Urlik & Krystyna Świderska
