@@ -17,9 +17,9 @@ window.document.onload = initializeDatabase();
 		var txt;
 		if (confirm("Czy dodać ponownie do bazy danych?")) {
         addEntry(F_Name, F_Surname, F_Studies, initDate());
-		//todo page refresh after confirm - we loose database
+		return true;
 		} else {
-			//do nothing
+			return false;
 		}
 	} else {
 		addEntry(F_Name, F_Surname, F_Studies, initDate());
