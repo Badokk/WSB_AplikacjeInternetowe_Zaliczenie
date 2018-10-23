@@ -9,50 +9,18 @@
 	<h1 id="Title">
 		System rejestracji studentów
 	</h1>
-	<br>
-	<br>
-	<div id="Todo">
-		<ul>
-			TODO:
-			<li>
-				Stworzyć formularz zawierający pola: "Imię", "Nazwisko" jako pola tekstowe, "Kierunek studiów" jako listę rozwijaną (dane ściągnąć ze strony wsb).
-			</li>
-			<li>
-				Dane wpisane do formularza zapisywać w pamięci tymczasowej (nie musimy przejmować się serializacją, F5 = zresetowanie danych)
-			</li>
-			<li>
-				Wprowadzenie danych ma być zasygnalizowane monitem potwierdzającym wprowadzone informacje ("Dodano studenta blablabla"). Monit pod formularzem.
-			</li>
-			<li>
-				Kontrola daty: Wyświetlać obecną datę na stronie oraz zapisywać datę wprowadzenia dla każdego wpisu.
-			</li>
-			<li>
-				Imiona i nazwiska, niezależnie od tego jak były wprowadzone, mają być wyświetlane w ALL CAPS
-			</li>
-			<li>
-				Walidowanie duplikatów - jeśli istnieje już wpis z tym samym imieniem i nazwiskiem, jakie wprowadziliśmy, zrobić wyskakujące okno "Czy aby na pewno?"
-			</li>
-			<li>
-				Wyświetlanie utworzonej "bazy danych" na przycisk.
-			</li>
-			<li>
-				Narzędzie "raportowe". Coś w stylu "W następujących dniach tyle a tyle wpisów", "Tyle a tyle studentów per kierunek" etc.
-			</li>
-		</ul>
-	</div>
-
-	<form id="Form">
+	<div id="Form">
 		Rejestracja<br>
 		Imię <input id="F_Name" type="text"><br>
 		Nazwisko <input id="F_Surname" type="text"><br>
 		<select id="F_Studies">
-			<option value="1">1:</option>
-			<option value="2">2:</option>
-			<option value="3">3:</option>
-			<option value="4">4:</option>
+			<option value="Informatyka">1:Informatyka</option>
+			<option value="Prawo">2:Prawo</option>
+			<option value="Filologia">3:Filologia</option>
+			<option value="Teologia">4:Teologia</option>
 		</select><br>
 		<button id="demo" class="button" type ="button" onClick="return tryToAddEntry()">Zapisz</button>
-	</form>
+	</div>
 
 	<div id="Feedback"></div>
 
@@ -61,17 +29,16 @@
 		<button id="Db_Show" onClick="showDatabase()">Pokaż bazę danych</button>
 		<button id="Db_Hide" onClick="hideDatabase()">Ukryj bazę danych</button>
 
-		<table>
-			<th>
+		<table style="display:none">
+			<thead>
 				<td>Lp.</td>
 				<td>Imię</td>
 				<td>Nazwisko</td>
 				<td>Kierunek</td>
 				<td>Data dodania</td>
-			</th>
-			<tr>
-				
-			</tr>
+			</thead>
+			<tbody>
+			</tbody>
 		</table>
 	</div>
 
@@ -80,6 +47,8 @@
 		<button id="R_GroupByDate" onClick="reportStudentsPerDay()">Zarejestrowani/Dzień</button>
 		<button id="R_GroupByStudies" onClick="reportStudentsPerStudies()">Zarejestrowani/Kierunek</button>
 		<button id="R_Hide" onClick="hideReports()">Ukryj</button>
+		<table>
+		</table>
 	</div>
 
 	<div id="Footer">
